@@ -33,7 +33,7 @@
 - All layout and style changes should be made in `update_site.py`, `update_project_page.py`, or `style.css` for consistency.
 - The menu bar order and labels are controlled by `menu_list` in `projects_list.py` and the label logic in `update_site.py`.
 - All images should be placed in the appropriate folder under `assets/images/`.
-- The logo should be stored as `assets/images/logo.jpg` for consistency.
+- The logo should be stored as `assets/images/logo.png` for consistency.
 - To ensure all pages are up to date, always run `update_site.py` after making changes to layout, style, or project lists, and `update_project_page.py` after changing project page layout or content.
 - For new project pages, always use `generate_page.py` to ensure correct structure and registration in the project lists, then run `update_project_page.py`.
 - If you change the structure of the project lists (e.g., add new fields), update both `update_site.py` and `generate_page.py` accordingly.

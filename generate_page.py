@@ -17,7 +17,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             <div class="header-content">
                 <div class="header-left">
                     <div class="logo">
-                        <img src="assets/images/logo.jpg" alt="Logo">
+                        <img src="assets/images/logo.png" alt="Logo">
                     </div>
                     <h1 class="site-name">sab18.github.io</h1>
                 </div>
