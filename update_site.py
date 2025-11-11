@@ -1,4 +1,5 @@
 import os
+import yaml
 from projects_list import menu_list, irl_projects_list, digital_projects_list, spotlight_projects_list
 
 def make_label(filename):
@@ -14,14 +15,22 @@ def make_label(filename):
     return label.title().replace('Irl', 'IRL')
 
 def make_project_card(project):
-    # project is a dict: {"file": ..., "date": ...}
+    # project is a dict: {"file": ...}
     filename = project["file"]
-    date_str = project.get("date", "")
     file_base = filename.replace('.html', '').lower().replace(' ', '_')
     img_path = f"assets/images/{file_base}/{file_base}_header_image.jpg"
     label = make_label(filename)
+    # Read date from YAML file if it exists
+    yaml_path = os.path.join('project_content', f'{file_base}.yaml')
+    date_str = ""
+    if os.path.exists(yaml_path):
+        try:
+            with open(yaml_path, 'r', encoding='utf-8') as yf:
+                ydata = yaml.safe_load(yf)
+                date_str = ydata.get('date', "")
+        except Exception:
+            date_str = ""
     img_tag = f'<img src="{img_path}" alt="{label} header" class="project-image">' if os.path.exists(img_path) else ''
-        # Date font 2 sizes smaller than project name (project-name is 20px, so 16px for date)
     date_html = f'<div class="project-date">{date_str}</div>' if date_str else ''
     return f'<a href="{filename}" class="project-card">{img_tag}<div class="project-name">{label}{date_html}</div></a>'
 
@@ -33,7 +42,34 @@ def update_menu_js():
     print('Updated menu_data.js')
 
 def update_projects_page(page, projects):
-    cards = '\n'.join([make_project_card(p) for p in projects])
+    # Sort projects by date (oldest first), then by project name if dates are equal
+    def get_project_sort_key(project):
+        filename = project["file"]
+        file_base = filename.replace('.html', '').lower().replace(' ', '_')
+        yaml_path = os.path.join('project_content', f'{file_base}.yaml')
+        date_str = ""
+        if os.path.exists(yaml_path):
+            try:
+                import yaml
+                with open(yaml_path, 'r', encoding='utf-8') as yf:
+                    ydata = yaml.safe_load(yf)
+                    date_str = ydata.get('date', "")
+            except Exception:
+                date_str = ""
+        # Parse date as YYYY-MM-DD for sorting, fallback to empty string
+        from datetime import datetime
+        try:
+            sort_date = datetime.strptime(date_str, "%B %d, %Y")
+        except Exception:
+            sort_date = datetime.min
+        return (sort_date, make_label(filename).lower())
+
+    # Only sort for IRL and Digital Projects pages
+    if page in ["irl_projects.html", "digital_projects.html"]:
+        sorted_projects = sorted(projects, key=get_project_sort_key)
+    else:
+        sorted_projects = projects
+    cards = '\n'.join([make_project_card(p) for p in sorted_projects])
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>

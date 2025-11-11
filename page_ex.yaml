@@ -1,0 +1,21 @@
+title: Example Project
+date: November 11, 2025
+abstract: |
+  This project demonstrates how to use YAML for project content.
+  You can include <b>bold</b> text, <i>italics</i>, and even
+  <a href="https://example.com">links</a> in your descriptions.
+
+method: |
+  1. Gather materials.
+  2. Follow the <a href="https://docs.example.com/guide">official guide</a>.
+  3. See the image below for reference:<br>
+  <img src="assets/images/example_project/step1.jpg" alt="Step 1" style="max-width:400px;">
+  <br>
+  For more images, see the <a href="#gallery">gallery section</a>.
+
+discussion: |
+  - What worked: The <b>automated script</b> was very helpful.
+  - What didn't: The first prototype failed due to a missing part.
+  - Next steps: Try a different material and update the <a href="https://github.com/yourrepo">GitHub repo</a>.
+
+gallery_dir: assets/images/example_project

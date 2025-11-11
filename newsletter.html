@@ -18,22 +18,44 @@
             <nav class="menu-container" id="menu"></nav>
         </div>
     </header>
-    <main style="margin-left:40px;margin-right:40px;">
+    <main>
         <section>
-            <h2 class="section-title">Newsletter</h2>
-            <h3>Date</h3>
-            <p>November 10, 2025</p>
+            <h2 class="section-title" style="margin-bottom:0;">Newsletter</h2>
+            <div class="project-date" style="margin-bottom:12px;margin-top:2px;">November 10, 2025</div>
+            
+            <div style="height:32px;"></div>
+            <div style="margin-bottom:56px;text-align:left;">
+                <img src="assets/images/newsletter/newsletter_header_image.jpg" alt="Newsletter main image" style="max-width:320px;max-height:220px;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:block;">
+            </div>
+            
             <h4>Abstract & Background</h4>
-            <p></p>
+            <p>After creating STSW, I thought it would be fun to send out a weekly newsletter to send music recs and keep the people up to date on my life.
+</p>
+            <div style="height:18px;"></div>
             <h4>Method & Results</h4>
-            <p></p>
+            <p>I send these out via email but what I like about these is that each newsletter is a playground that I can design depending on the week.  Sometimes I put a lot of time into the newsletter and they're creative or even artistc.  Other times, it feels more fitting for them to be to the point and concise.
+</p>
+            <div style="height:18px;"></div>
             <h4>Discussion & Learnings</h4>
-            <p></p>
+            <p>You can sign up here if you want an @sarabarrows18 newsletter in your inbox every Sunday morning, or check out the most recent newseltter here [link].
+</p>
+            <div style="height:18px;"></div>
             <h4>Gallery</h4>
             <p>Images for this project should be placed in <code>assets/images/newsletter</code></p>
         </section>
     </main>
-    <script src="menu_data.js"></script>
-    <script src="menu.js"></script>
+        <script src="menu_data.js"></script>
+        <script src="menu.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const figures = document.querySelectorAll('.auto-figure');
+            figures.forEach((fig, idx) => {
+                let cap = fig.querySelector('figcaption');
+                if (cap) {
+                    cap.innerHTML = `Figure ${idx + 1}: ` + cap.innerHTML.replace(/^Figure \\d+:\s*/, '');
+                }
+            });
+        });
+        </script>
 </body>
 </html>

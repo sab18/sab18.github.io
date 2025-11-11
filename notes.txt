@@ -1,11 +1,11 @@
 to do:
 
 general:
-[] consisten L/R margins
+[] consisten L/R margins (for about page)
 [x] logo for homepage
 [] figure out best project page layout
-[] organize project chronogogically
-[] pull date from yaml or list (don't have 2 sep locations)
+[x] organize project chronogogically
+[x] pull date from yaml or list (don't have 2 sep locations)
 [] have future page
 
 customize:

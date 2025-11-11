@@ -1,13 +1,15 @@
 title: Table
 date: November 10, 2025
-abstract: My mom was quick to turn my childhood (teenage) bedroom into a secondary living room with a sofa bed.  She wanted a coffee table for the room and intead of buying one, I told her I would make one.  I volunteered to do this bc I had a scrap piece of plywood in my car for 4 months.  I was intially thinking I would make myself a desk, but I already have a desk so I didn't need a new one.  Here is the monstrocisty of my back seat for several months.
-method: 
+discussion: ''
+abstract: |
+  My mom was quick to turn my childhood (teenage) bedroom into a secondary living room with a sofa bed.  She wanted a coffee table for the room and intead of buying one, I told her I would make one.  I volunteered to do this bc I had a scrap piece of plywood in my car for 4 months.  I was intially thinking I would make myself a desk, but I already have a desk so I didn't need a new one.  Here is the monstrocisty of my back seat for several months.
+method: |
   This was a farily easy build.  The plywood needed to be routed and then the whole piece had to be stained.  I toyed with the idea of buying table legs, but ultimately wanted to make them bc it is more of a challenge.  I opted to 3D print the legs since my 3D printer is finally up and running again.  I thought this would be a nicer, more polished look versus wooden legs.  Maybe in a future table I'll make legs using a lathe...<br>
   My mom gave me very little direction.  You can see in Fig __ my initial sketches and design.  I thought replicating a __ design would be nice, but my iteration of this wasn't easy on the eye.  Plus, (as I was reminded of during this project) my 3D printer has a 12" height capacity and the legs were going to be taller than that.  I found some simpler legs to base my design off of that made breaking them in half for printing easier.  In thinking about how do cut the legs up, I decided having them screw into each other would be best.  This removes glue from the equation, which is nice, but mostly would teach me a new skill of thread design.<br>
   In general, I used the Helix tool and swept a triangle around it to make the threads.  The key here is to use an equilateral triangle that has a side length just shy of your helix pitch value.  The top half of the legs that attach to the table are acts as the "screw" or threaded rod.  The bottom side acts as a nut, where the top portion threads into.<br>  
   In my first attempt, the top side printed really smoothly.  To generate the bottom half I thought I could use a Boolean operator to create the void area the screw would fit nicely into.  I printed a top and bottom piece out (at full scale), but they did not fit, :( [PHOTO].<br>
   I went back to the drawing board and thought about how I could modify the threads so they fit together.  Instead of a boolean, I use the Helix + Sweep + equilateral triangle trifecta on the bottom piece as well and removed instead of added a solid.  I also modified the diameter of the bottom piece to be wider so that hopefully the top screw can fit into the bottom threads.<br>
   ...
-
-discussion: ''
+discussion: |
+  
 gallery_dir: assets/images/table

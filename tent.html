@@ -18,22 +18,48 @@
             <nav class="menu-container" id="menu"></nav>
         </div>
     </header>
-    <main style="margin-left:40px;margin-right:40px;">
+    <main>
         <section>
-            <h2 class="section-title">Tent</h2>
-            <h3>Date</h3>
-            <p>November 10, 2025</p>
+            <h2 class="section-title" style="margin-bottom:0;">Tent</h2>
+            <div class="project-date" style="margin-bottom:12px;margin-top:2px;">November 10, 2025</div>
+            
+            <div style="height:32px;"></div>
+            <div style="margin-bottom:56px;text-align:left;">
+                <img src="assets/images/tent/tent_header_image.jpg" alt="Tent main image" style="max-width:320px;max-height:220px;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:block;">
+            </div>
+            
             <h4>Abstract & Background</h4>
-            <p></p>
+            <p>I went on a week long + camping trip with my best bud earlier this year.  I have a couple different tents (one I got off Amazon in high school for $12, one my mom got from her work's points catolog, and one a friend gave me).  When camping out in Shenandoah, I brought the Coleman my mom gave me - it is nice because it is big and can hold its own, but it's pretty clunky.  It doesn't pack down easily and is really heavy.  After admiring someone with a tent that looked to be extremely light weight, I ideated an idea to make my own tent.
+</p>
+            <div style="height:18px;"></div>
             <h4>Method & Results</h4>
             <p></p>
+            <div style="height:18px;"></div>
             <h4>Discussion & Learnings</h4>
-            <p></p>
+            <p>Here is a test figure reference: <a href="#fig1">Figure 1</a>.<br>
+<figure class="auto-figure" id="fig1">
+  <img src="assets/images/initial_project_header_image.jpg" alt="Initial Project Header" style="max-width:200px;">
+  <figcaption>This is the initial project header image used for testing.</figcaption>
+</figure>
+You can add more text and figures as needed.
+</p>
+            <div style="height:18px;"></div>
             <h4>Gallery</h4>
             <p>Images for this project should be placed in <code>assets/images/tent</code></p>
         </section>
     </main>
-    <script src="menu_data.js"></script>
-    <script src="menu.js"></script>
+        <script src="menu_data.js"></script>
+        <script src="menu.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const figures = document.querySelectorAll('.auto-figure');
+            figures.forEach((fig, idx) => {
+                let cap = fig.querySelector('figcaption');
+                if (cap) {
+                    cap.innerHTML = `Figure ${idx + 1}: ` + cap.innerHTML.replace(/^Figure \\d+:\s*/, '');
+                }
+            });
+        });
+        </script>
 </body>
 </html>
