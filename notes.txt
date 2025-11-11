@@ -1,0 +1,10 @@
+to do:
+
+general:
+[] consisten L/R margins
+[] logo for homepage
+[] figure out best project page layout
+
+customize:
+[] replace all pics (menu bar, logo, background pattern)
+[] write 
