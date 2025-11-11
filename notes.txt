@@ -8,3 +8,8 @@ general:
 customize:
 [] replace all pics (menu bar, logo, background pattern)
 [] write 
+[] incl. cost in tent...
+
+FUTURE:
+[] STSW
+[] FUTURE
