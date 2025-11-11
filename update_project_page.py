@@ -24,17 +24,17 @@ TEMPLATE = '''<!DOCTYPE html>
             <nav class="menu-container" id="menu"></nav>
         </div>
     </header>
-    <main style="margin-left:40px;margin-right:40px;">
+    <main>
         <section>
             <h2 class="section-title">{{ title }}</h2>
             <h3>Date</h3>
             <p>{{ date }}</p>
             <h4>Abstract & Background</h4>
-            <p>{{ abstract }}</p>
+            <p>{{ abstract|safe }}</p>
             <h4>Method & Results</h4>
-            <p>{{ method }}</p>
+            <p>{{ method|safe }}</p>
             <h4>Discussion & Learnings</h4>
-            <p>{{ discussion }}</p>
+            <p>{{ discussion|safe }}</p>
             <h4>Gallery</h4>
             <p>Images for this project should be placed in <code>{{ gallery_dir }}</code></p>
         </section>
