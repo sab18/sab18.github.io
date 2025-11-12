@@ -21,7 +21,7 @@ def make_project_card(project):
     img_path = f"assets/images/{file_base}/{file_base}_header_image.jpg"
     label = make_label(filename)
     # Read date from YAML file if it exists
-    yaml_path = os.path.join('project_content', f'{file_base}.yaml')
+    yaml_path = os.path.join('EDITABLE_CONTENT', f'{file_base}.yaml')
     date_str = ""
     if os.path.exists(yaml_path):
         try:
@@ -42,11 +42,11 @@ def update_menu_js():
     print('Updated menu_data.js')
 
 def update_projects_page(page, projects):
-    # Sort projects by date (oldest first), then by project name if dates are equal
+    # Sort projects by date (most recent first), then by project name if dates are equal
     def get_project_sort_key(project):
         filename = project["file"]
         file_base = filename.replace('.html', '').lower().replace(' ', '_')
-        yaml_path = os.path.join('project_content', f'{file_base}.yaml')
+        yaml_path = os.path.join('EDITABLE_CONTENT', f'{file_base}.yaml')
         date_str = ""
         if os.path.exists(yaml_path):
             try:
@@ -56,7 +56,6 @@ def update_projects_page(page, projects):
                     date_str = ydata.get('date', "")
             except Exception:
                 date_str = ""
-        # Parse date as YYYY-MM-DD for sorting, fallback to empty string
         from datetime import datetime
         try:
             sort_date = datetime.strptime(date_str, "%B %d, %Y")
@@ -64,9 +63,9 @@ def update_projects_page(page, projects):
             sort_date = datetime.min
         return (sort_date, make_label(filename).lower())
 
-    # Only sort for IRL and Digital Projects pages
+    # Always sort for IRL, Digital, and Spotlight Projects pages
     if page in ["irl_projects.html", "digital_projects.html"]:
-        sorted_projects = sorted(projects, key=get_project_sort_key)
+        sorted_projects = sorted(projects, key=get_project_sort_key, reverse=True)
     else:
         sorted_projects = projects
     cards = '\n'.join([make_project_card(p) for p in sorted_projects])
@@ -112,7 +111,28 @@ def inject_spotlight_section_into_index():
     with open('index.html', 'r', encoding='utf-8') as f:
         content = f.read()
     # Generate spotlight section HTML
-    cards = '\n'.join([make_project_card(p) for p in spotlight_projects_list])
+    # Sort spotlight projects by date (most recent first)
+    def get_project_sort_key(project):
+        filename = project["file"]
+        file_base = filename.replace('.html', '').lower().replace(' ', '_')
+        yaml_path = os.path.join('EDITABLE_CONTENT', f'{file_base}.yaml')
+        date_str = ""
+        if os.path.exists(yaml_path):
+            try:
+                import yaml
+                with open(yaml_path, 'r', encoding='utf-8') as yf:
+                    ydata = yaml.safe_load(yf)
+                    date_str = ydata.get('date', "")
+            except Exception:
+                date_str = ""
+        from datetime import datetime
+        try:
+            sort_date = datetime.strptime(date_str, "%B %d, %Y")
+        except Exception:
+            sort_date = datetime.min
+        return (sort_date, make_label(filename).lower())
+    sorted_spotlight = sorted(spotlight_projects_list, key=get_project_sort_key, reverse=True)
+    cards = '\n'.join([make_project_card(p) for p in sorted_spotlight])
     spotlight_html = f'<section id="spotlight-projects">\n  <h1 class="section-title">Spotlight</h1>\n  <div class="projects-grid">\n    {cards}\n  </div>\n</section>'
     # Replace or insert the spotlight section
     import re

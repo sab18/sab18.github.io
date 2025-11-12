@@ -10,11 +10,11 @@ method: |
   
   <div class="figure-row">
     <figure class="auto-figure" id="fig1a">
-      <img src="assets/images/dresser/Fig_1a.png" alt="Dresser view A">
+      <img src="assets/images/dresser/Fig_1_a.png" alt="Dresser view A">
         <figcaption>Figure 1a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig1b">
-      <img src="assets/images/dresser/Fig_1b.png" alt="Dresser view B">
+      <img src="assets/images/dresser/Fig_1_b.png" alt="Dresser view B">
         <figcaption>Figure 1b</figcaption>
     </figure>
   </div>
@@ -23,11 +23,11 @@ method: |
   
   <div class="figure-row">
     <figure class="auto-figure" id="fig2a">
-      <img src="assets/images/dresser/Fig_2a.png" alt="Dresser view A">
+      <img src="assets/images/dresser/Fig_2_a.png" alt="Dresser view A">
         <figcaption>Figure 2a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig2b">
-      <img src="assets/images/dresser/Fig_2b.png" alt="Dresser view B">
+      <img src="assets/images/dresser/Fig_2_b.png" alt="Dresser view B">
         <figcaption>Figure 2b</figcaption>
     </figure>
   </div>
@@ -43,11 +43,11 @@ method: |
 
   <div class="figure-row">
     <figure class="auto-figure" id="fig4a">
-      <img src="assets/images/dresser/Fig_4a.png" alt="Dresser view A">
+      <img src="assets/images/dresser/Fig_4_a.png" alt="Dresser view A">
         <figcaption>Figure 4a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig4b">
-      <img src="assets/images/dresser/Fig_4b.png" alt="Dresser view B">
+      <img src="assets/images/dresser/Fig_4_b.png" alt="Dresser view B">
         <figcaption>Figure 4b</figcaption>
     </figure>
   </div>

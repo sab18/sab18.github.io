@@ -1,8 +1,10 @@
 import os
 import yaml
+import os
+import yaml
 from jinja2 import Template
 
-PROJECT_CONTENT_DIR = 'project_content'
+PROJECT_CONTENT_DIR = 'EDITABLE_CONTENT'
 PROJECT_PAGES_DIR = '.'
 TEMPLATE = r'''<!DOCTYPE html>
 <html lang="en">
@@ -47,16 +49,17 @@ TEMPLATE = r'''<!DOCTYPE html>
             <p>Images for this project should be placed in <code>{{ gallery_dir }}</code></p>
         </section>
     </main>
-        <script src="menu_data.js"></script>
-        <script src="menu.js"></script>
-        <!-- Figure numbering script removed: captions are expected to contain the desired text (e.g., "Figure 1a"). -->
+    <script src="menu_data.js"></script>
+    <script src="menu.js"></script>
+    <!-- Figure numbering script removed: captions are expected to contain the desired text (e.g., "Figure 1a"). -->
 </body>
 </html>
 '''
 
+
 def update_project_pages():
     for fname in os.listdir(PROJECT_CONTENT_DIR):
-        if fname.endswith('.yaml'):
+        if fname.endswith('.yaml') and fname not in ('about.yaml', 'index.yaml'):
             with open(os.path.join(PROJECT_CONTENT_DIR, fname), 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(f)
             file_base = fname.replace('.yaml', '')
@@ -82,3 +85,5 @@ def update_project_pages():
 
 if __name__ == '__main__':
     update_project_pages()
+
+

@@ -3,7 +3,7 @@ menu_list = [
     "index.html",
     "irl_projects.html",
     "digital_projects.html",
-    # "about.html"
+    "about.html"
 ]
 
 irl_projects_list = [

@@ -6,13 +6,17 @@ general:
 [] figure out best project page layout
 [x] organize project chronogogically
 [x] pull date from yaml or list (don't have 2 sep locations)
-[] have future page
+[x] have future page
 [] indent first line in paragraph
+[] ensure works on mobile
+[] image opacity
 
 customize:
 [] replace all pics (menu bar, logo, background pattern)
 [] write 
 [] incl. cost in tent...
+[] add in all image alts
+
 
 FINAL:
 [] TENSE!
