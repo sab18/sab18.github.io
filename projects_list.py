@@ -8,7 +8,6 @@ menu_list = [
 
 irl_projects_list = [
     {"file": "dresser.html"},
-    {"file": "backpack.html"},
     {"file": "watch.html"},
     {"file": "tent.html"},
     {"file": "table.html"},

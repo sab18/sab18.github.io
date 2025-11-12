@@ -1,6 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Garamond', 'Times New Roman', serif; background-color: #F5F1E8; color: #333; line-height: 1.6; }
 body { font-family: 'Garamond', 'Times New Roman', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
+
+:root {
+	/* Uniform image height across the site (approx 25% smaller than previous 200px) */
+	--uniform-image-height: 300px;
+}
 header { background-color: #1B3A5F; padding: 24px 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: relative; z-index: 1; }
 header { background-color: #16213A; padding: 24px 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: relative; z-index: 1; }
 .header-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0; }
@@ -33,7 +38,7 @@ main {
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
 .project-card { background-color: white; border-radius: 2px; overflow: hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); transition: all 0.3s ease; cursor: pointer; text-decoration: none; display: block; border: 1px solid rgba(27, 58, 95, 0.08); }
 .project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-.project-image { width: 100%; height: 200px; object-fit: cover; display: block; }
+.project-image { display: block; height: var(--uniform-image-height); width: auto; max-width: 100%; object-fit: cover; }
 .project-name { padding: 24px; font-size: 20px; font-weight: normal; color: #1B3A5F; text-align: left; letter-spacing: 0.5px; }
 .project-name { padding: 24px; font-size: 20px; font-weight: normal; color: #16213A; text-align: left; letter-spacing: 0.5px; display: flex; flex-direction: column; align-items: flex-start; }
 .project-date { font-size: 16px !important; color: #888 !important; margin-top: 2px; text-align: left; }
@@ -47,4 +52,38 @@ body::before {
 	pointer-events: none;
 	background: url('assets/images/website_pattern.jpg') repeat;
 	opacity: 0.10;
+}
+
+/* Figure grid for project pages */
+.figure-row {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+	flex-wrap: wrap; /* stack on small screens */
+	margin: 18px 0;
+}
+.auto-figure {
+	flex: 1 1 300px; /* allow shrinking; min width ~300px */
+	text-align: center; /* single figures centered by default */
+}
+.figure-row .auto-figure {
+	flex: 1 1 45%;
+	min-width: 200px;
+}
+.auto-figure img {
+	height: var(--uniform-image-height);
+	width: auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+.auto-figure figcaption {
+	font-size: 14px;
+	color: #333;
+	font-weight: 700;
+	margin-top: 8px;
+	text-align: center;
+}
+@media (max-width: 600px) {
+	.figure-row { flex-direction: column; gap: 12px; }
 }

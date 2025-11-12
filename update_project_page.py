@@ -49,17 +49,7 @@ TEMPLATE = r'''<!DOCTYPE html>
     </main>
         <script src="menu_data.js"></script>
         <script src="menu.js"></script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const figures = document.querySelectorAll('.auto-figure');
-            figures.forEach((fig, idx) => {
-                let cap = fig.querySelector('figcaption');
-                if (cap) {
-                    cap.innerHTML = `Figure ${idx + 1}: ` + cap.innerHTML.replace(/^Figure \\d+:\s*/, '');
-                }
-            });
-        });
-        </script>
+        <!-- Figure numbering script removed: captions are expected to contain the desired text (e.g., "Figure 1a"). -->
 </body>
 </html>
 '''

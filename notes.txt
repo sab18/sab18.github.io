@@ -7,11 +7,16 @@ general:
 [x] organize project chronogogically
 [x] pull date from yaml or list (don't have 2 sep locations)
 [] have future page
+[] indent first line in paragraph
 
 customize:
 [] replace all pics (menu bar, logo, background pattern)
 [] write 
 [] incl. cost in tent...
+
+FINAL:
+[] TENSE!
+[] proofread
 
 FUTURE:
 [] STSW
