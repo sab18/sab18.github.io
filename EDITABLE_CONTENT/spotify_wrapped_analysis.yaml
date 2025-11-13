@@ -6,30 +6,29 @@ abstract: |
 method: |
   Going into this project, I didn't have any web development experience.  I had dabbled in Python and data analysis, but never made a full fledged webapp.  I used the Plotly Dash framework in Python to make the webapp because that's what ChatGPT told me to do.  Chat GPT was a dear friend throughout this process and I would not have gotten this far without her.
 
-  #### V1 - Initial build
+  #### v1 - Initial build
 
-  I spent the early days figuring out what I wanted the website to look like and what features to include.  I figured I'd have a Homepage that links to a plot of minutes listened vs. year, top artists each year, song recommender, and some fun facts.  I started v1 somewhere around Jan 2024.  It was pretty basic, but really cool to see my vision come to life (albeit just locally).  Back then I didn't have anything saved on GitHub.  It was solely saved onto my computer.  I remember I had spent a week straight working until 1am trying to get everything up and running and debugged.  I finally got it to a place I was happy with and my laptop malfunctioned and lost most of my progress.  That was sad, but a good lesson to back everything up and use version control.  I was finally able to get back to a working state, not too far from where I left off, and pushed all my changes to GitHub.  Fig 1 is a screenshot of the Homepage.  As you can see, there are different tabs at the top.  Below is a list of the various pages:
-    - Homepage: a breif intro and some old rando pics of me.  (Easter egg, if you click on the images, it'll take you to some of my favorite Youtube music-related videos).
-    - And That's a Wrap: a plot of mins vs year for summative listening mins history.
-    - High Five: top songs and artists every year, wich some pictures of me and my buddies from the year.
-    - In the Name of New Music: a random song generator to recommend songs pulled from my entire listening discography.
-    - Fun Facts!: some fun stats about my listening habits including total minutes listened since creating my spotify acct, coutries I've listened to music in, 
-  Homepage w/ rando images of me
+  I spent the early days figuring out what I wanted the website to look like and what features to include.  I started v1 somewhere around Jan 2024.  It was pretty basic, but really cool to see my vision come to life (albeit just locally).  Back then I didn't have anything saved on GitHub.  It was solely saved onto my computer.  I remember I had spent a week straight working until 1am trying to get everything up and running and debugged.  I finally got it to a place I was happy with and my laptop malfunctioned and lost most of my progress.  That was sad, but a good lesson to back everything up and use version control.  I was finally able to get back to a working state, not too far from where I left off, and pushed all my changes to GitHub.  Fig 1 is a screenshot of the Homepage when the website was in its infancy.
   
   <figure class="auto-figure" id="fig1">
     <img src="assets/images/spotify_wrapped_analysis/Fig_1.png" alt="Homepage screenshot">
       <figcaption>Figure 1</figcaption>
   </figure>
 
-  - And That's a Wrap w/ plot of mins vs year
-  High Five w/ top pics and top songs and artists every year
-  In the Name of New Music w/ RSG
-  Fun Facts! w/ fun facts
-  Under Construction w/ where the webapp is headed
+  As you can see, there are different tabs at the top.  Below is a list of the various pages:
+  <div style="margin-left:0;">
+    <p>- Homepage: a breif intro and some old rando pics of me.  (Easter egg, if you click on the images, it'll take you to some of my favorite Youtube music-related videos).
+    <p>- And That's a Wrap: a plot of mins vs year for summative listening mins history.</p>
+    <p>- High Five: top songs and artists every year, wich some pictures of me and my buddies from the year.</p>
+    <p>- In the Name of New Music: a random song generator to recommend songs pulled from my entire listening discography.</p>
+    <p>- Fun Facts!: some fun stats about my listening habits including total minutes listened since creating my spotify acct, coutries I've listened to music in, top listened to songs, most back-toback plays, etc.</p>
+    <p>- Under Construction: where the webapp is headed.</p>
 
-
-  By April 2024, I had a solid working version, the last step was to deploy.  
+    Deploying was honestly one of the biggest challenges with this project.  Figuring out how to host it on some server so that it could be publicly accessible was quite the journey.  Initially I tried Heroku and PythonAnywhere, but neither did what I wanted.  Eventually I found [LINK] this YouTube video using Render.  After dozens of rewatches and attempts, I finally got it to work.  The worst part is the waiting period - making a change, deploying, sitting around for 5 minutes waiting to see if it'll work, only to have a new error pop up.  [OUTLINE SOME MAIN CHALLENGES].  I think I finally got it to deploy a couple days before I went to Japan back in 2024.  It was a chaotic few days trying to scramble to get it done in time, but it all came together in the end.  I had to consolidate a lot of the code to be in the root directory/the app.py file, but it was working nonetheless.
   
+  #### v2 - Added functionality, front end embellishments, & databasing
+    
+  The next few months (April to July) were full of continuous improvement.  I added the "Superb Lyrics" page that features some of my favorite lyrics.  I also added the formerly called "Exposing Myself" page that features a search bar and dispays the first date I listened to every song by a specific artist.  I really like this feature (on of my favorite parts of the website) because it tells me when I first heard about an artist so I can brag about knowing them before they were cool.  The final page I added was called "Rec Me" which provided a page where you could submit a song (or just a message) to me about.  There were some other front end changes too - adding background photos, highlighting certain table cells based on the artist, and making a unique cursor for the website on Desktop.  One of the main back end changes was changing the way the tab files were stored - I created folders for each tab to segregate tab contents which was nice for the time being.  Moreover, the big backend upgrade was adding in a database (to connect to incomming Recommendation submittals).  I also hooked the DB up to logins so I can track visitors on the page.  I used SQLite3 for this, which turned out to be a bad decision down the line...
 
 
 discussion: ''
