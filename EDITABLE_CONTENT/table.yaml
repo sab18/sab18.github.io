@@ -1,6 +1,5 @@
 title: Table
 date: November 10, 2025
-discussion: ''
 abstract: |
   My mom was quick to turn my childhood (teenage) bedroom into a secondary living room with a sofa bed.  She wanted a coffee table for the room and instead of buying one, I told her I would make one.  I volunteered to do this bc I had a scrap piece of plywood in my car for 3+ months.  I was intially thinking I would make myself a desk with the plywood, but I already have a desk so I didn't really need a new one.  Fig 1 is the monstrosity of my back seat since summer.  I'm just happy to have my car back to normal.<br>
   <figure class="auto-figure" id="fig1">
@@ -10,7 +9,12 @@ abstract: |
 
 method: |
   This was a farily easy build.  My gameplan going in was that to route the edges of the plywood and stain it.  I toyed with the idea of buying table legs, but ultimately wanted to make them bc it is more of a challenge.  I opted to 3D print the legs since my 3D printer is finally up and running again.  I thought that would be a nicer, more polished look versus my attempt at wooden legs.  Maybe in a future table I'll make legs using a lathe...<br>
-  My mom gave me very little direction.  You can see in Fig 2 my initial sketches and design.  I thought replicating hairpin legs would be nice, but my iteration of this wasn't easy on the eye.  Plus, (as I was reminded of during this project) my 3D printer has a 12" height capacity and the legs were going to be taller than that.<br>
+  My mom gave me very little direction.  You can see in Fig 2 my initial (v basic) sketches and design.  I thought replicating hairpin legs would be nice, but my iteration of this wasn't easy on the eye.  Plus, (as I was reminded of during this project) my 3D printer has a 12" height capacity and the legs were going to be taller than that.<br>
+
+  <figure class="auto-figure" id="fig2">
+    <img src="assets/images/table/Fig_2.jpg" alt="Dresser single view">
+      <figcaption>Figure 2</figcaption>
+  </figure>
   
   I found some simpler legs to base my design off of that made breaking them in half for printing easier.  In thinking about how do cut the legs up, I decided having them screw into each other would be best.  This removes glue from the equation, which is nice, but mostly would teach me a new skill of thread design.  I've done a tiny bit of tapping and dying, but doing this in CAD would be a new adventure to tackle.  My approach was to have the top half of the leg act as the "screw" or threaded rod and the bottom side acts as a nut, where the top portion threads into, as shown in Fig 3.
 
@@ -33,9 +37,22 @@ method: |
     </figure>
   </div>
 
+  Fortunately this new design worked and the legs screwed together nicely (Fig 5a + Fig 5b).  I printed all 4 legs out using some tough PLA with a 40% infill and a gyroid filling.  My 3D printing wizard friend said gyroid is strongest and also recommended I increase the filet in some weak points - so I did.  My wizard buddy also said that there is a tool in CAD for making threads, so I didn't need sweep a triangle over a helix at all, but you live and you learn.  Per leg, it took just over a day to print.
 
-# Notes:
-# image 2 - sketch of initial prototype
-# also include mating / screwing.
-  
+  <div class="figure-row">
+    <figure class="auto-figure" id="fig5a">
+      <img src="assets/images/table/Fig_5_a.jpg" alt="Dresser view A">
+        <figcaption>Figure 5a</figcaption>
+    </figure>
+    <figure class="auto-figure" id="fig5b">
+      <img src="assets/images/table/Fig_5_b.jpg" alt="Dresser view B">
+        <figcaption>Figure 5b</figcaption>
+    </figure>
+
+  I opted to use __ router bit becuase it would give a nice finish.
+
+  <br>
+discussion: |
+  Test
+  <br>
 gallery_dir: assets/images/table

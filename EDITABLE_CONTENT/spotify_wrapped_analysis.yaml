@@ -1,0 +1,39 @@
+title: Spotify Wrapped Analysis
+date: January 18, 2025
+abstract: |
+  I like listening to music and found out that you can download your entire Spotify listening history.  At first, I just wanted to do this to see some of my stats, but in thinking about how to best visualize this data, I thought hosting via Webapp would be cool.  I first found you could download your Spotify data late 2022 and finally got around to making the website in early 2024 ish, so needless to say, this project has been a wip for many years.  It's had many iterations and also many roadblocks, but the first official/public release was Jan 18, 2025.
+
+method: |
+  Going into this project, I didn't have any web development experience.  I had dabbled in Python and data analysis, but never made a full fledged webapp.  I used the Plotly Dash framework in Python to make the webapp because that's what ChatGPT told me to do.  Chat GPT was a dear friend throughout this process and I would not have gotten this far without her.
+
+  #### V1 - Initial build
+
+  I spent the early days figuring out what I wanted the website to look like and what features to include.  I figured I'd have a Homepage that links to a plot of minutes listened vs. year, top artists each year, song recommender, and some fun facts.  I started v1 somewhere around Jan 2024.  It was pretty basic, but really cool to see my vision come to life (albeit just locally).  Back then I didn't have anything saved on GitHub.  It was solely saved onto my computer.  I remember I had spent a week straight working until 1am trying to get everything up and running and debugged.  I finally got it to a place I was happy with and my laptop malfunctioned and lost most of my progress.  That was sad, but a good lesson to back everything up and use version control.  I was finally able to get back to a working state, not too far from where I left off, and pushed all my changes to GitHub.  Fig 1 is a screenshot of the Homepage.  As you can see, there are different tabs at the top.  Below is a list of the various pages:
+    - Homepage: a breif intro and some old rando pics of me.  (Easter egg, if you click on the images, it'll take you to some of my favorite Youtube music-related videos).
+    - And That's a Wrap: a plot of mins vs year for summative listening mins history.
+    - High Five: top songs and artists every year, wich some pictures of me and my buddies from the year.
+    - In the Name of New Music: a random song generator to recommend songs pulled from my entire listening discography.
+    - Fun Facts!: some fun stats about my listening habits including total minutes listened since creating my spotify acct, coutries I've listened to music in, 
+  Homepage w/ rando images of me
+  
+  <figure class="auto-figure" id="fig1">
+    <img src="assets/images/spotify_wrapped_analysis/Fig_1.png" alt="Homepage screenshot">
+      <figcaption>Figure 1</figcaption>
+  </figure>
+
+  - And That's a Wrap w/ plot of mins vs year
+  High Five w/ top pics and top songs and artists every year
+  In the Name of New Music w/ RSG
+  Fun Facts! w/ fun facts
+  Under Construction w/ where the webapp is headed
+
+
+  By April 2024, I had a solid working version, the last step was to deploy.  
+  
+
+
+discussion: ''
+gallery_dir: assets/images/spotify_wrapped_analysis
+
+
+# v1

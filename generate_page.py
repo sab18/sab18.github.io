@@ -53,10 +53,12 @@ def append_to_projects_list(page_file, list_name, date_str=None):
     # Find the list
     start_idx = None
     end_idx = None
+    import re
     for i, line in enumerate(lines):
-        if line.strip().startswith(list_name + "=["):
+        # match patterns like: list_name = [  (allow spaces around =)
+        if re.match(rf'^{re.escape(list_name)}\s*=\s*\[', line):
             start_idx = i
-            # Find the closing bracket
+            # Find the closing bracket (allow ']' or '],')
             for j in range(i+1, len(lines)):
                 if lines[j].strip().startswith("]"):
                     end_idx = j
@@ -88,9 +90,9 @@ def create_portfolio_page(page_name, page_type):
     today = date.today().strftime("%B %d, %Y")
 
     # 2. Create YAML content file for the project
-    yaml_path = os.path.join('project_content', f'{file_base}.yaml')
-    if not os.path.exists('project_content'):
-        os.makedirs('project_content', exist_ok=True)
+    yaml_path = os.path.join('EDITABLE_CONTENT', f'{file_base}.yaml')
+    if not os.path.exists('EDITABLE_CONTENT'):
+        os.makedirs('EDITABLE_CONTENT', exist_ok=True)
     if not os.path.exists(yaml_path):
         # Build a proper YAML structure and write it using PyYAML to avoid
         # indentation/formatting issues from a hand-rolled multi-line string.
@@ -171,8 +173,9 @@ def create_portfolio_page(page_name, page_type):
             lines = f.readlines()
         start_idx = None
         end_idx = None
+        import re
         for i, line in enumerate(lines):
-            if line.strip().startswith(page_type + "=["):
+            if re.match(rf'^{re.escape(page_type)}\s*=\s*\[', line):
                 start_idx = i
                 for j in range(i+1, len(lines)):
                     if lines[j].strip().startswith("]"):
@@ -201,24 +204,24 @@ def create_portfolio_page(page_name, page_type):
 
 if __name__ == "__main__":
 
-    all_prog_dict={
-        "Dresser":"irl_projects_list",
-        "Backpack":"irl_projects_list",
-        "Watch":"irl_projects_list",
-        "Tent":"irl_projects_list",
-        "Table":"irl_projects_list",
-        "Newsletter":"digital_projects_list",
-    }
+    # all_prog_dict={
+    #     "Dresser":"irl_projects_list",
+    #     "Backpack":"irl_projects_list",
+    #     "Watch":"irl_projects_list",
+    #     "Tent":"irl_projects_list",
+    #     "Table":"irl_projects_list",
+    #     "Newsletter":"digital_projects_list",
+    # }
 
-    #delete existing test page if exists
-    for page_name in all_prog_dict.keys():
-        file_base = page_name.strip().lower().replace(' ', '_')
-        file_name = f"{file_base}.html"
-        if os.path.exists(file_name):
-            os.remove(file_name)
-            print(f"Deleted existing {file_name} for testing.")
+    # #delete existing test page if exists
+    # for page_name in all_prog_dict.keys():
+    #     file_base = page_name.strip().lower().replace(' ', '_')
+    #     file_name = f"{file_base}.html"
+    #     if os.path.exists(file_name):
+    #         os.remove(file_name)
+    #         print(f"Deleted existing {file_name} for testing.")
 
-    for page_name, page_type in all_prog_dict.items():
-        # page_name="Watch"
-        # page_type= "irl_projects_list"  #irl_projects_list, digital_projects_list
-        create_portfolio_page(page_name, page_type)
+    # for page_name, page_type in all_prog_dict.items():
+    page_name="Spotify Wrapped Analysis"
+    page_type= "digital_projects_list"  #irl_projects_list, digital_projects_list
+    create_portfolio_page(page_name, page_type)

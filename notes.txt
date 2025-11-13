@@ -10,6 +10,7 @@ general:
 [] indent first line in paragraph
 [] ensure works on mobile
 [] image opacity
+[] rename project file
 
 customize:
 [] replace all pics (menu bar, logo, background pattern)

@@ -15,8 +15,10 @@ irl_projects_list = [
 
 digital_projects_list = [
     {"file": "newsletter.html"},
+    {"file": "spotify_wrapped_analysis.html", "date": "November 13, 2025"},
 ]
 
 spotlight_projects_list = [
     {"file": "table.html"},
+    {"file": "spotify_wrapped_analysis.html", "date": "November 13, 2025"},
 ]

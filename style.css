@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Garamond', 'Times New Roman', serif; background-color: #F5F1E8; color: #333; line-height: 1.6; }
-body { font-family: 'Garamond', 'Times New Roman', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
+/* Prefer the webfont 'EB Garamond' (Google Fonts). If not available, fall back to system Garamond, then serif. */
+body { font-family: 'EB Garamond', 'Garamond', 'Times New Roman', serif; background-color: #F5F1E8; color: #333; line-height: 1.6; }
+body { font-family: 'EB Garamond', 'Garamond', 'Times New Roman', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
 
 :root {
 	/* Uniform image height across the site (approx 25% smaller than previous 200px) */
