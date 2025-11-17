@@ -23,8 +23,11 @@ main {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 60px 40px;
+	padding: 60px 40px;
   box-sizing: border-box;
+	/* place main above the decorative background pseudo-element */
+	position: relative;
+	z-index: 1;
 }
 .section-title { font-size: 36px; color: #1B3A5F; margin-bottom: 40px; font-weight: normal; letter-spacing: 0.5px; }
 .section-title {
@@ -39,7 +42,7 @@ main {
 					text-align: left;
 }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-.project-card { background-color: white; border-radius: 2px; overflow: hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); transition: all 0.3s ease; cursor: pointer; text-decoration: none; display: block; border: 1px solid rgba(27, 58, 95, 0.08); }
+.project-card { background-color: rgba(255,255,255,1); border-radius: 2px; overflow: hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); transition: all 0.3s ease; cursor: pointer; text-decoration: none; display: block; border: 1px solid rgba(27, 58, 95, 0.08); position: relative; z-index: 2; }
 .project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
 .project-image {
 	display: block;
@@ -47,6 +50,13 @@ main {
 	height: 180px;
 	object-fit: cover;
 	max-width: 100%;
+}
+
+/* Allow images to show transparent regions (no forced white background). */
+.project-image,
+.auto-figure img,
+.project-text img {
+	display: block;
 }
 .project-name { padding: 24px; font-size: 20px; font-weight: normal; color: #1B3A5F; text-align: left; letter-spacing: 0.5px; }
 .project-name { padding: 24px; font-size: 20px; font-weight: normal; color: #16213A; text-align: left; letter-spacing: 0.5px; display: flex; flex-direction: column; align-items: flex-start; }
@@ -59,15 +69,19 @@ body::before {
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 0;
 	pointer-events: none;
-	background: url('assets/images/website_pattern.jpg') repeat;
-	opacity: 0.10;
+	 /* Use a single background image that fills the viewport (no tiling).
+		 Keep it behind content and slightly faded so it reads as a background. */
+	 background: url('assets/images/website_pattern.jpg') no-repeat center center / cover;
+	 background-attachment: fixed;
+	 opacity: 0.05;
 }
 
 /* Figure grid for project pages */
 .figure-row {
 	display: flex;
 	gap: 20px;
-	align-items: flex-start;
+	/* align items to the bottom so captions align across figures of equal height */
+	align-items: flex-end;
 	flex-wrap: wrap; /* stack on small screens */
 	margin: 18px 0;
 }
@@ -75,6 +89,7 @@ body::before {
 	flex: 1 1 300px; /* allow shrinking; min width ~300px */
 	text-align: center; /* single figures centered by default */
 }
+.auto-figure { padding: 6px; border-radius: 4px; position: relative; z-index: 2; }
 .figure-row .auto-figure {
 	flex: 1 1 45%;
 	min-width: 200px;
@@ -110,4 +125,9 @@ body::before {
 }
 @media (max-width: 600px) {
 	.figure-row { flex-direction: column; gap: 12px; }
+}
+
+/* Preserve line breaks in project text fields (treat newlines as line breaks) */
+.project-text p {
+	white-space: pre-line; /* collapse sequences of whitespace but honor newlines */
 }

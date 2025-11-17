@@ -76,13 +76,14 @@ def update_projects_page(page, projects):
     <title>{make_label(page)}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="header-left">
                 <div class="logo">
-                    <img src="assets/images/logo.png" alt="Logo">
+                    <img src="assets/images/logo_inverted.png" alt="Logo">
                 </div>
                 <h1 class="site-name">sab18.github.io</h1>
             </div>

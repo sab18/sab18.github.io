@@ -1,58 +1,89 @@
 title: Table
 date: November 10, 2025
 abstract: |
-  My mom was quick to turn my childhood (teenage) bedroom into a secondary living room with a sofa bed.  She wanted a coffee table for the room and instead of buying one, I told her I would make one.  I volunteered to do this bc I had a scrap piece of plywood in my car for 3+ months.  I was intially thinking I would make myself a desk with the plywood, but I already have a desk so I didn't really need a new one.  Fig 1 is the monstrosity of my back seat since summer.  I'm just happy to have my car back to normal.<br>
+  <div>
+  My mom was quick to turn my childhood (teenage) bedroom into a secondary living room with a sofa bed.  She wanted a coffee table for the room and instead of buying one, I told her I would make one.  I volunteered to do this bc I had a scrap piece of plywood in my car for 3+ months.  I was intially thinking I would make myself a desk with the plywood, but I already have a desk so I didn't really need a new one.  Fig 1 is the monstrosity of my back seat since summer.  For a while my car was clean, but you don't even want to know the junk that I've been hauling around lately.<br>
+  <br>
   <figure class="auto-figure" id="fig1">
-    <img src="assets/images/table/Fig_1.jpg" alt="Dresser single view">
+    <img src="assets/images/table/Fig_1.jpg" alt="Plywood in car backseat">
       <figcaption>Figure 1</figcaption>
   </figure>
 
 method: |
-  This was a farily easy build.  My gameplan going in was that to route the edges of the plywood and stain it.  I toyed with the idea of buying table legs, but ultimately wanted to make them bc it is more of a challenge.  I opted to 3D print the legs since my 3D printer is finally up and running again.  I thought that would be a nicer, more polished look versus my attempt at wooden legs.  Maybe in a future table I'll make legs using a lathe...<br>
-  My mom gave me very little direction.  You can see in Fig 2 my initial (v basic) sketches and design.  I thought replicating hairpin legs would be nice, but my iteration of this wasn't easy on the eye.  Plus, (as I was reminded of during this project) my 3D printer has a 12" height capacity and the legs were going to be taller than that.<br>
+  This was a farily easy build and was never suposed to be all that good/sturdy.  My gameplan going in was simply to route the edges of the plywood and stain it.  I toyed with the idea of buying table legs, but ultimately wanted to make them bc it is more of a challenge.  I opted to 3D print the legs since my 3D printer is finally up and running again.  I thought that would be a nicer, more polished look versus my attempt at wooden legs.  Maybe in a future table I'll make legs using a lathe...I know 3D printing isn't the strongest, but what can you do?  ¯\_(ツ)_/¯ <br>
+  My mom gave me very little direction.  You can see in Fig 2 my initial (v basic) sketches and design.  I thought replicating hairpin legs would be nice, but my iteration of this wasn't easy on the eyes.  Plus (as I was reminded of during this project) my printer has a 12" height capacity and the legs were going to be taller than that.<br>
 
   <figure class="auto-figure" id="fig2">
-    <img src="assets/images/table/Fig_2.jpg" alt="Dresser single view">
+    <img src="assets/images/table/Fig_2.jpg" alt="Sketchbook calculations">
       <figcaption>Figure 2</figcaption>
   </figure>
   
-  I found some simpler legs to base my design off of that made breaking them in half for printing easier.  In thinking about how do cut the legs up, I decided having them screw into each other would be best.  This removes glue from the equation, which is nice, but mostly would teach me a new skill of thread design.  I've done a tiny bit of tapping and dying, but doing this in CAD would be a new adventure to tackle.  My approach was to have the top half of the leg act as the "screw" or threaded rod and the bottom side acts as a nut, where the top portion threads into, as shown in Fig 3.
+  I found some simpler legs to base my design off of that made breaking them in half for printing easier.  In thinking about how to cut the legs up, I decided having them screw into each other would be best.  This techinically removes glue from the equation, which is nice, but mostly would teach me a new skill of thread design.  I've done a tiny bit of tapping and dying, but doing this in CAD would be a new adventure to tackle.  My approach was to have the top half of the leg act as the "screw" or threaded rod and the bottom side acts as a nut, where the top portion threads into, as shown in Fig 3.
+  <br>
 
   <figure class="auto-figure" id="fig3">
-    <img src="assets/images/table/Fig_3.png" alt="Dresser single view">
+    <img src="assets/images/table/Fig_3.png" alt="Threaded table leg concept">
       <figcaption>Figure 3</figcaption>
   </figure>
 
   
-  In general, I used the Helix tool and swept a triangle around it to make the threads, as shown in Fig 4a.  The key here is to use an equilateral triangle (minus the tip for some addeding tolerence) that has a side length just shy of your helix pitch value.  I used a 1/2" for pitch bc I wanted to have a decently long thread length without having to make a million roations to screw the legs together.  To start, when generating the bottom half, I used a Boolean operator to create the void area the screw would fit nicely into based on the geometry of the top screw.  I printed top and bottom leg pieces out (at full scale), but unshockingly they did not fit together :(.  So it was back to the drawing board.  In my second iteration, I made 2 main changes.  On the bottom nut-adjacent section, instead of a Boolean removal, I used the Helix + equilateral triangle + Sweep trifecta to generate the threads, as shown in Fig 4b.  I also modified the diameter of the threads to be wider so that hopefully the top screw can fit into the bottom threads.<br>
+  In general, I used the Helix tool and swept a triangle around it to make the threads, as shown in Fig 4a.  The key here is to use an equilateral triangle (minus the tip for some added tolerence) that has a side length just shy of your helix pitch value.  I used a 1/2" for pitch bc I wanted to have a decently long thread length without having to make a million rotations to screw the legs together.  To start, when generating the bottom half, I used a Boolean operator to create the void area the screw would fit nicely into.  I printed the top and bottom leg pieces out (at full scale), but unshockingly they did not fit together :(.  So it was back to the drawing board.  In my second iteration, I made 2 main changes.  On the bottom nut-adjacent section, instead of a Boolean removal, I used the Helix + equilateral triangle + Sweep trifecta to generate the threads, as shown in Fig 4b.  I also modified the diameter of the threads to be wider so that (hopefully) the top screw can fit into the bottom threads because I think it was too small before.<br>
 
   <div class="figure-row">
     <figure class="auto-figure" id="fig4a">
-      <img src="assets/images/table/Fig_4_a.png" alt="Dresser view A">
+      <img src="assets/images/table/Fig_4_a.png" alt="Top threaded view">
         <figcaption>Figure 4a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig4b">
-      <img src="assets/images/table/Fig_4_b.png" alt="Dresser view B">
+      <img src="assets/images/table/Fig_4_b.png" alt="Bottom threaded view">
         <figcaption>Figure 4b</figcaption>
     </figure>
   </div>
 
-  Fortunately this new design worked and the legs screwed together nicely (Fig 5a + Fig 5b).  I printed all 4 legs out using some tough PLA with a 40% infill and a gyroid filling.  My 3D printing wizard friend said gyroid is strongest and also recommended I increase the filet in some weak points - so I did.  My wizard buddy also said that there is a tool in CAD for making threads, so I didn't need sweep a triangle over a helix at all, but you live and you learn.  Per leg, it took just over a day to print.
+  Fortunately this new design worked and the legs screwed together nicely (Fig 5a + Fig 5b).  I printed all 4 legs out using some tough PLA with a 40% infill and a gyroid filling.  My 3D printing wizard friend said gyroid is strongest and also recommended I increase the filet in some weak points - so I did.  They also said that there is a tool in CAD for making threads and the way I did it very much overcomplicated the process, but you live and you learn.  Per leg, it took just over a day to print.  They're 1.5" in diameter, but slim down to half of that at the foot.
 
   <div class="figure-row">
     <figure class="auto-figure" id="fig5a">
-      <img src="assets/images/table/Fig_5_a.jpg" alt="Dresser view A">
+      <img src="assets/images/table/Fig_5_a.jpg" alt="Single leg 3D print">
         <figcaption>Figure 5a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig5b">
-      <img src="assets/images/table/Fig_5_b.jpg" alt="Dresser view B">
+      <img src="assets/images/table/Fig_5_b.jpg" alt="Single leg assembled">
         <figcaption>Figure 5b</figcaption>
+  </figure>
+
+  </div>
+
+  While the legs were printing, I got to work on the tabletop.  I opted to use the router bit in Fig 6a becuase I thought it would leave a nice finish.  I ran it across the table's edges (plunging slightly more on the top side than the bottom).  The result was nicely rounded edges as shown in Fig 6b.  After routing, I sanded the entire tabletop.  I know you're supposed to go up in grit incrementally, but I feel like I was going off vibes here.  The surface was pretty smooth in the end, which is what I really care about.
+
+  <div class="figure-row">
+    <figure class="auto-figure" id="fig6a">
+      <img src="assets/images/table/Fig_6_a.jpg" alt="Router bit">
+        <figcaption>Figure 6a</figcaption>
     </figure>
+    <figure class="auto-figure" id="fig6b">
+      <img src="assets/images/table/Fig_6_b.jpg" alt="Routed edge">
+        <figcaption>Figure 6b</figcaption>
+  </figure>
+  
+  There was a moment during this project where I accidentally cut too deep into the wood (Fig 7).  I thought about just leaving it but ultimately decided against that since it was fairly noticeable (to me).  I just cut that section off and rerouted.
 
-  I opted to use __ router bit becuase it would give a nice finish.
+  <figure class="auto-figure" id="fig7">
+    <img src="assets/images/table/Fig_7.jpg" alt="Dresser single view">
+      <figcaption>Fig 7</figcaption>
+  </figure>
 
-  <br>
+  When I queried my mom about stains, she said I should do a blue stain to match her blue couch.  I swiftly said "Oh, Leslie." like in that one HIMYM episode with Katy Perry who plays Honey.  Instead, I suggested she use a natural stain of the brown variant.  I ended up going with "Traditional" because it is farily neutral.  I painted it on, wiped it off, and let it dry.  The last step is to screw the legs on.  Fortunately, I created a nice countersink in the leg prints to match the profile of the screw, so everything sits flush.  I had one issue related to the screws being too long, since I forgot that accounting for their length was a thing, but I last minute went to the hardware store and got shorter ones.  Fig 8 showcases the final product in my old stomping grounds (my old bedroom).  The table is 24" x 36" x 18" tall (ish).
+
+  <figure class="auto-figure" id="fig8">
+    <img src="assets/images/table/Fig_8.jpg" alt="Final table design in room">
+      <figcaption>Figure 8</figcaption>
+  </figure>
+
+  </div>
+  
 discussion: |
-  Test
-  <br>
-gallery_dir: assets/images/table
+  I quite like how this table turned out.  Specifically, I am happy with the routing - because a) it was a good new skill to get familiar with (I have routed before but never solo) and b) it made the table look way more polished.  I'm also glad I was able to learn about non-standard thread design in CAD.
+
+  This was a good project to get back into the swing of things.  I'd say a general theme at this stage is that I'm not chasing perfection, I'm just hoping for something that is functional.  In some sense, I like when things are imperfect, because it shows that it's handmade and I put effort into making it.  Maybe once I learn better techniques all around, I'll care more about what the finished product looks like, but for now I enjoy eyeballing measurements and going with the flow.
+  

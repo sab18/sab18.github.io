@@ -31,13 +31,14 @@ def update_about_page():
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/images/favicon.ico">
 </head>
 <body>
   <header>
     <div class="header-content" style="flex-direction:column;align-items:center;gap:0;">
       <div class="header-left" style="justify-content:center;width:100%;gap:12px;">
         <div class="logo">
-            <img src="assets/images/logo.png" alt="Logo">
+            <img src="assets/images/logo_inverted.png" alt="Logo">
         </div>
         <h1 class="site-name">sab18.github.io</h1>
       </div>

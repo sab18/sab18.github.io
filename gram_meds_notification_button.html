@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gram Meds Notification Button</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="assets/images/logo_inverted.png" alt="Logo">
+                </div>
+                <h1 class="site-name">sab18.github.io</h1>
+            </div>
+            <nav class="menu-container" id="menu"></nav>
+        </div>
+    </header>
+    <main>
+    <section class="project-text">
+            <h2 class="section-title" style="margin-bottom:0;">Gram Meds Notification Button</h2>
+            <div class="project-date" style="margin-bottom:12px;margin-top:2px;">March 31, 2026</div>
+            
+            <h4>Abstract & Background</h4>
+            <p>My gram has to take daily meds, and my mom would call her every day to check.  She used to be good about taking them, but within the last 6 months or so, it's been a bit of a struggle.  I thought it would be useful to put my electronics skills to the test and make her a simple device that has a button, so when clicked, my mom gets an email saying that my gram has taken her meds.
+</p>
+            <div style="height:18px;"></div>
+            <h4>Method & Results</h4>
+            <p>I've only ever used Arduinos in the past (college projects, personal tinkering, etc.) but I knew I would need something more sophisticated for this build.  I went with a Raspberry Pi 3 because, simply because it's just a full on computer.  Also, I had one kicking around.
+
+First, I prototyped the button and email functionality.  It's pretty easy to get something working nowadays (I used Claude).  Everything worked first try, to my surprise, but honestly, the wiring is pretty simple, as shown in Fig 1.  I had to figure out how to setup Gmail App Password authentication, but even that was straightforward.
+
+<figure class="auto-figure" id="fig1">
+  <img src="assets/images/gram_meds_notification_button/Fig_1.jpg" alt="Wiring prototype">
+    <figcaption>Figure 1</figcaption>
+</figure>
+
+In my testing, I realized there was no feedback loop to tell the user that the button press was successful.  I added a simple green LED to the circuit that turns on for a few seconds after the button is pressed to give some reassurance that the email was sent.  Fig 2 shows the final wiring diagram.
+
+<figure class="auto-figure" id="fig2">
+  <img src="assets/images/gram_meds_notification_button/Fig_2.png" alt="Final wiring diagram">
+    <figcaption>Figure 2</figcaption>
+</figure>
+
+
+After everything was working, I designed a simple enclosure for the entire build to sit in in OnShape.  The final build is 2 pieces, the main shell and then a small piece that snaps to the bottom just to hold all the pieces in place.  I 3D printed the enclosure using PLA and after some slight printer issues, it came out good enough.
+
+Putting everything together, I did some very mediocre soldering, and also did solder certain wires that I probably should have because I cut some of the wires too short.
+
+The final product is pretty simple, but it does the job.  I got a good review from my mom, peep Fig 3.
+
+<figure class="auto-figure" id="fig3">
+  <img src="assets/images/gram_meds_notification_button/Fig_3.jpg" alt="Final product">
+    <figcaption>Figure 3</figcaption>
+</figure>
+
+Also, here's the code I ended up using.  There is the following python code:
+<br>
+<pre><code>from gpiozero import Button, LED
+from signal import pause
+import smtplib
+import time
+import threading
+from email.mime.text import MIMEText
+
+GMAIL_ADDRESS  = "yourgmail@gmail.com"
+GMAIL_APP_PASS = "yoursixteencharpass"
+NOTIFY_EMAIL   = "yournotifyemail@gmail.com"
+COOLDOWN_SECS  = 10
+LED_PIN        = 27
+BUTTON_PIN     = 17
+LED_ON_SECS    = 10
+
+last_sent = 0
+button = Button(BUTTON_PIN, pull_up=False)
+led    = LED(LED_PIN)
+
+def flash_led():
+    led.on()
+    time.sleep(LED_ON_SECS)
+    led.off()
+
+def send_email():
+    msg = MIMEText("Gram pressed the button. This is an automation powered by RaspberryPi.")
+    msg["Subject"] = "Gram took her meds!"
+    msg["From"]    = GMAIL_ADDRESS
+    msg["To"]      = NOTIFY_EMAIL
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as s:
+            s.starttls()
+            s.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
+            s.sendmail(GMAIL_ADDRESS, NOTIFY_EMAIL, msg.as_string())
+        print("Email sent!")
+    except Exception as e:
+        print(f"Email failed: {e}")
+
+def on_press():
+    global last_sent
+    now = time.time()
+    if now - last_sent > COOLDOWN_SECS:
+        last_sent = now
+        print("Button pressed - sending email...")
+        threading.Thread(target=flash_led, daemon=True).start()
+        send_email()
+    else:
+        print("Button pressed - cooldown active, skipping.")
+
+button.when_pressed = on_press
+
+print("Ready. Waiting for button press. Ctrl+C to stop.")
+pause()</code></pre> 
+<br>
+that detects the button is pressed, turns the LED on for 10 seconds, and then sends an email notification through Gmail's SMTP server.
+
+There is also this file:
+<br>
+<pre><code>[Unit]
+Description=Button Email Notifier
+After=network-online.target multi-user.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/python3 /home/pi/button_notify.py
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+
+<br>
+Which is more of a setup notes file, and tells the Rasperry Pi to automatically launch the python script every time it boots, which means the .py file is a set-it-and-forget-it type of deal.
+
+Honestly though, if you were to build something similar, it's probably easiest to ask Claude to walk you through it.  I've been trying to use Claude for everything since it seems to be the least bad of all the tech companies, but also I'm embracing that AI pesketarian lifestyle.  I need to eat some meat, but I try to be off of it when it isn't completely necessary.  Not that it matters, because I think the world is too far gone at this point anyway.
+</p>
+            <div style="height:18px;"></div>
+            <h4>Discussion & Learnings</h4>
+            <p>
+I gave this contraption to my gram and she now uses it every day.  It sits right by her pill box.  I have 2 favorite parts about this build.  First, I like how it directly serves a need.  My mom wanted to have more oversight on when my gram was taking her medication, while maintaining a hands off approach, and this tool directly addresses that.  Second, I like how it is so simply and user friendly.  My gram, who takes several seconds to turn off the tv, has had NO issues simply pressing a big red button!  At some point, it could be cool to try to improve the build, so it could be produced at a small scale, for those in need, but for now, I feel good that I have a baseline knowledge in electronics, programming, etc. to make small gadgets like this to improve the lives of those around me.
+</p>
+            <div style="height:18px;"></div>
+        </section>
+    </main>
+    <script src="menu_data.js"></script>
+    <script src="menu.js"></script>
+    <!-- Figure numbering script removed: captions are expected to contain the desired text (e.g., "Figure 1a"). -->
+</body>
+</html>

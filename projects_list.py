@@ -11,6 +11,7 @@ irl_projects_list = [
     {"file": "watch.html"},
     {"file": "tent.html"},
     {"file": "table.html"},
+    {"file": "gram_meds_notification_button.html", "date": "May 10, 2026"},
 ]
 
 digital_projects_list = [
@@ -21,4 +22,5 @@ digital_projects_list = [
 spotlight_projects_list = [
     {"file": "table.html"},
     {"file": "spotify_wrapped_analysis.html", "date": "November 13, 2025"},
+    {"file": "gram_meds_notification_button.html", "date": "May 10, 2026"},
 ]

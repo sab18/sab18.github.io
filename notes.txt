@@ -1,22 +1,28 @@
 to do:
 
+current:
+[] read through and fix website page
+[x] add gram button page
+    [] make sure circuit drawing matches to code...
+
+
 general:
-[] consisten L/R margins (for about page)
+[x] consisten L/R margins (for about page)
 [x] logo for homepage
-[] figure out best project page layout
+[x] figure out best project page layout
 [x] organize project chronogogically
 [x] pull date from yaml or list (don't have 2 sep locations)
 [x] have future page
 [] indent first line in paragraph
 [] ensure works on mobile
-[] image opacity
-[] rename project file
+[x] image opacity
+[x] rename project file
 
 customize:
-[] replace all pics (menu bar, logo, background pattern)
-[] write 
+[x] replace all pics (menu bar, logo, background pattern)
+[x] write 
 [] incl. cost in tent...
-[] add in all image alts
+[x] add in all image alts
 
 
 FINAL:
@@ -24,5 +30,11 @@ FINAL:
 [] proofread
 
 FUTURE:
+irl:
+[] 
+
+digital:
 [] STSW
-[] FUTURE
+[] Newsletter?
+[] this website?
+[] timesheet
