@@ -1,18 +1,18 @@
 title: Watch
 date: July 19, 2025
 abstract: |
-  I don't really like material stuff (it stresses me out), however, every so often I'll latch onto a possession, and I feel it intertwine with my identity.  In high school I became a camp counselor and needed to start wearing a watch.  Eventually I bought a Timex Ironman (see Fig1).  It soon became a staple in my life and transcended beyond the summer heat.  I wore this watch every day from 2017 onward.  After the battery died in 2020, I performed some minor surgery and replaced it.  This transplant extended my watch's life for a couple years which brought me joy like no other.  
+  I don't really like material stuff (it stresses me out), however, every so often I'll latch onto a possession, and I feel it intertwine with my identity.  In high school I became a camp counselor and needed to start wearing a watch.  Eventually I bought a Timex Ironman (see Fig1).  It soon became a staple in my life and transcended beyond the summer heat.  I wore this watch every day from 2016 onward.  After the battery died in 2020, I performed some minor surgery and replaced it.  This transplant extended my watch's life for a couple years which brought me joy like no other.  
 
   <figure class="auto-figure" id="fig1">
-    <img src="assets/images/watch/Fig_1.png" alt="Dresser single view">
+    <img src="assets/images/watch/Fig_1.png" alt="Old fave watch">
       <figcaption>Figure 1</figcaption>
   </figure>
   
-  One fateful day, I worked up the courage to go to the beach with a long time pal.  My replacement battery was still going strong, but as doctor in training, I didn't close the stiches properly and my watch's gasket had a sub optimal seal.  Being a good mother, I knew this and avoided water at all costs, but on this day, I looked away for one second and when I realized some water had infected Mr. Timex, it was already too late.  I saw the ink drain out of my watch as the display flatlined.  A moment of silence for my fallen comrade, Fig 2.  Flowers were accepted at the Celebration of Life ceremony.  I mourned but ultimately had to move on, becuase I know that is what my watch would have wanted.<br>
+  One fateful day, I worked up the courage to go to the beach with a long time pal.  My replacement battery was still going strong, but as a doctor in training, I didn't close the stiches properly and my watch's gasket had a sub optimal seal.  Being a good mother, I knew this and avoided water at all costs, but on this day, I looked away for one second and when I realized some water had infected Mr. Timex, it was already too late.  I saw the ink drain out of my watch as the display flatlined.  A moment of silence for my fallen comrade, Fig 2.  Flowers were accepted at the Celebration of Life ceremony.  I mourned but ultimately had to move on, becuase I know that is what my watch would have wanted.<br>
 
   <br>
   <figure class="auto-figure" id="fig2">
-    <img src="assets/images/watch/Fig_2.png" alt="Dresser single view">
+    <img src="assets/images/watch/Fig_2.png" alt="Eulogy for watch">
       <figcaption>Figure 2</figcaption>
   </figure>
 
@@ -20,7 +20,7 @@ abstract: |
 
   <br>
   <figure class="auto-figure" id="fig3">
-    <img src="assets/images/watch/Fig_3.png" alt="Dresser single view">
+    <img src="assets/images/watch/Fig_3.jpg" alt="New fancy watch">
       <figcaption>Figure 3</figcaption>
   </figure>
 
@@ -31,11 +31,11 @@ method: |
 
   <div class="figure-row">
     <figure class="auto-figure" id="fig4a">
-      <img src="assets/images/watch/Fig_4_a.png" alt="Dresser view A">
+      <img src="assets/images/watch/Fig_4_a.png" alt="v1 CAD">
         <figcaption>Figure 4a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig4b">
-      <img src="assets/images/watch/Fig_4_b.png" alt="Dresser view B">
+      <img src="assets/images/watch/Fig_4_b.jpg" alt="v1 print">
         <figcaption>Figure 4b</figcaption>
     </figure>
   </div>
@@ -44,11 +44,11 @@ method: |
 
   <div class="figure-row">
     <figure class="auto-figure" id="fig5a">
-      <img src="assets/images/watch/Fig_5_a.png" alt="Dresser view A">
+      <img src="assets/images/watch/Fig_5_a.png" alt="Final dimensions">
         <figcaption>Figure 5a</figcaption>
     </figure>
     <figure class="auto-figure" id="fig5b">
-      <img src="assets/images/watch/Fig_5_b.png" alt="Dresser view B">
+      <img src="assets/images/watch/Fig_5_b.jpg" alt="Final lewk">
         <figcaption>Figure 5b</figcaption>
     </figure>
   </div>
@@ -56,4 +56,3 @@ method: |
 discussion: |
   This was a good intro project into both CAD and 3D printing.  It was a reminder of how design is an iterative process and filament selection is an important consideration.  I got exposure to the various tools in Onshape for both generating parts and making them look nice.  If I were to make one more iteration, I'd modify the dimentions a bit more, namely the height of the loop, but overall I'm happy with how this project turned out.  An easy and quick fix to reunite with my beloved companion.
 
-gallery_dir: assets/images/watch

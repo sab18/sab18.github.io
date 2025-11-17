@@ -17,7 +17,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             <div class="header-content">
                 <div class="header-left">
                     <div class="logo">
-                        <img src="assets/images/logo.png" alt="Logo">
+                        <img src="assets/images/logo_inverted.png" alt="Logo">
                     </div>
                     <h1 class="site-name">sab18.github.io</h1>
                 </div>
@@ -35,8 +35,6 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
                 <p>{method}</p>
                 <h4>Discussion & Learnings</h4>
                 <p>{discussion}</p>
-                <h4>Gallery</h4>
-                <p>Images for this project should be placed in <code>{gallery_dir}</code></p>
             </section>
         </main>
         <script src="menu_data.js"></script>
@@ -102,7 +100,6 @@ def create_portfolio_page(page_name, page_type):
             "abstract": "",
             "method": "",
             "discussion": "",
-            "gallery_dir": f"assets/images/{file_base}",
         }
         try:
             with open(yaml_path, 'w', encoding='utf-8') as f:
@@ -144,17 +141,12 @@ def create_portfolio_page(page_name, page_type):
     abstract_html = meta.get('abstract') if meta.get('abstract') else '<!-- Write your abstract and background here -->'
     method_html = meta.get('method') if meta.get('method') else '<!-- Write your methods and results here -->'
     discussion_html = meta.get('discussion') if meta.get('discussion') else '<!-- Write your discussion and learnings here -->'
-    gallery_dir = meta.get('gallery_dir', f"assets/images/{file_base}")
-    # Match the sample's backslash style on Windows for display
-    gallery_display = gallery_dir.replace('/', '\\') if os.name == 'nt' else gallery_dir
-
     html_content = HTML_TEMPLATE.format(
         title=page_name,
         date=meta.get('date', today),
         abstract=abstract_html,
         method=method_html,
         discussion=discussion_html,
-        gallery_dir=gallery_display,
     )
 
     html_fname = os.path.join('.', f"{file_base}.html")

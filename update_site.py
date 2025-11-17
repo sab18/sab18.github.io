@@ -82,7 +82,7 @@ def update_projects_page(page, projects):
         <div class="header-content">
             <div class="header-left">
                 <div class="logo">
-                    <img src="assets/images/logo.png" alt="Logo">
+                    <img src="assets/images/logo_inverted.png" alt="Logo">
                 </div>
                 <h1 class="site-name">sab18.github.io</h1>
             </div>
