@@ -11,10 +11,10 @@ def run_script(script):
 
 def main():
     scripts = [
-        'update_about_page.py',
-        'update_index.py',
-        'update_project_page.py',
-        'update_site.py',
+        'z_update_site.py',
+        'z_update_about_page.py',
+        'z_update_index.py',
+        'z_update_project_page.py',
     ]
     for script in scripts:
         if os.path.exists(script):

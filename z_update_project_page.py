@@ -89,7 +89,7 @@ def update_project_pages(include_header_images: bool = True):
                 f.write(html)
             print(f"Updated {html_fname}")
 
-
-update_project_pages(include_header_images=False)
+if __name__ == '__main__':
+    update_project_pages(include_header_images=False)
 
 

@@ -14,15 +14,15 @@ def update_index():
   title = ydata.get('title', 'Homepage')
   body = ydata.get('body', '')
   # Import spotlight_projects_list from projects_list.py
-  spec_proj = importlib.util.spec_from_file_location('projects_list', os.path.join(os.getcwd(), 'projects_list.py'))
+  spec_proj = importlib.util.spec_from_file_location('z_projects_list', os.path.join(os.getcwd(), 'z_projects_list.py'))
   projects_list = importlib.util.module_from_spec(spec_proj)
   spec_proj.loader.exec_module(projects_list)
   spotlight_projects = projects_list.spotlight_projects_list
 
   # Import make_project_card from update_site.py
-  spec_site = importlib.util.spec_from_file_location('update_site', os.path.join(os.getcwd(), 'update_site.py'))
+  spec_site = importlib.util.spec_from_file_location('z_update_site', os.path.join(os.getcwd(), 'z_update_site.py'))
   update_site = importlib.util.module_from_spec(spec_site)
-  sys.modules['projects_list'] = projects_list  # ensure import in update_site works
+  sys.modules['z_projects_list'] = projects_list  # ensure import in update_site works
   spec_site.loader.exec_module(update_site)
   make_project_card = update_site.make_project_card
 
@@ -76,21 +76,24 @@ def update_index():
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{title}</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="assets/images/favicon.ico">
         </head>
         <body>
         <header>
-        <div class="header-content" style="flex-direction:column;align-items:center;gap:0;">
-        <div class="header-left" style="justify-content:center;width:100%;gap:12px;">
-            <div class="logo">
-            <img src="assets/images/logo_inverted.png" alt="Logo">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <img src="assets/images/logo_inverted.png" alt="Logo">
+                    </div>
+                    <h1 class="site-name">sab18.github.io</h1>
+                </div>
+                <nav class="menu-container" id="menu"></nav>
             </div>
-            <h1 class="site-name">sab18.github.io</h1>
-        </div>
-        <nav class="menu-container" id="menu" style="width:100%;margin-top:18px;display:flex;justify-content:center;"></nav>
-        </div>
         </header>
         <main>
+        <section class="homepage-body">
         {html_content}
+        </section>
         {spotlight_html}
         </main>
         <script src="menu_data.js"></script>

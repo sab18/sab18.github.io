@@ -44,8 +44,8 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
 '''
 
 def append_to_projects_list(page_file, list_name, date_str=None):
-    """Append the project dict to the specified list in projects_list.py if not already present."""
-    projects_list_path = 'projects_list.py'
+    """Append the project dict to the specified list in z_projects_list.py if not already present."""
+    projects_list_path = 'z_projects_list.py'
     with open(projects_list_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
     # Find the list
@@ -70,14 +70,14 @@ def append_to_projects_list(page_file, list_name, date_str=None):
             if date_str is None:
                 from datetime import date
                 date_str = date.today().strftime("%B %d, %Y")
-            lines.insert(end_idx, f'    {{"file": "{page_file}", "date": "{date_str}"}},\n')
+            lines.insert(end_idx, f'    {{"file": "{page_file}"}},\n')
             with open(projects_list_path, 'w', encoding='utf-8') as f:
                 f.writelines(lines)
-            print(f"Added {page_file} to {list_name} in projects_list.py")
+            print(f"Added {page_file} to {list_name} in z_projects_list.py")
         else:
             print(f"{page_file} already in {list_name}")
     else:
-        print(f"Could not find {list_name} in projects_list.py")
+        print(f"Could not find {list_name} in z_projects_list.py")
 
 
 def create_portfolio_page(page_name, page_type):
@@ -97,9 +97,9 @@ def create_portfolio_page(page_name, page_type):
         yaml_data = {
             "title": page_name,
             "date": today,
-            "abstract": "",
-            "method": "",
-            "discussion": "",
+            "abstract": "|",
+            "method": "|",
+            "discussion": "|",
         }
         try:
             with open(yaml_path, 'w', encoding='utf-8') as f:
@@ -160,7 +160,7 @@ def create_portfolio_page(page_name, page_type):
     # 5. Append to correct projects_list.py list if not already present
     added_to_project_list = False
     if page_type in ["irl_projects_list", "digital_projects_list"]:
-        projects_list_path = 'projects_list.py'
+        projects_list_path = 'z_projects_list.py'
         with open(projects_list_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
         start_idx = None
@@ -186,7 +186,7 @@ def create_portfolio_page(page_name, page_type):
             else:
                 print(f"{file_name} already in {page_type}")
         else:
-            print(f"Could not find {page_type} in projects_list.py")
+            print(f"Could not find {page_type} in z_projects_list.py")
 
     # 6. Only append to spotlight_projects_list if not already in designated project list
     if added_to_project_list:
@@ -214,6 +214,6 @@ if __name__ == "__main__":
     #         print(f"Deleted existing {file_name} for testing.")
 
     # for page_name, page_type in all_prog_dict.items():
-    page_name="Spotify Wrapped Analysis"
-    page_type= "digital_projects_list"  #irl_projects_list, digital_projects_list
+    page_name="Art Wall"
+    page_type= "irl_projects_list"  #irl_projects_list, digital_projects_list
     create_portfolio_page(page_name, page_type)

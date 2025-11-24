@@ -1,7 +1,5 @@
 title: Dresser
 date: August 13, 2025
-discussion: This was a fun short term project.  I didn't end up making the dresser (for the best) but I learned a lot along the way.  When I designed the first version, I was quite slow.  It was easier for me to delete and redo a shape/dimension if I messed it up than modify it.  I didn't understand dimensioning or what most of the tools did.  By the end, I was using shortcuts and could navigate the platforms much faster.  Another main takeway from this project is using Assemblies in Onshape and mates like slider mate.  Previously I've only ever made 1 main part in CAD, but in this project, I had to make left and right drawers plus the base skeleton.  Having the drawers have functionality wihtin the assembly took some time to understand, but once I was able to get the draws to actually slide, the entire project project came together.  There are still some tolerence issues and minor tweaks I'd make if I was actually going to build this dresser, but I'm happy with how it turned out for the time being.
-
 abstract: |
   I jokingly said I would make my friend a dresser. So, I made my friend a dresser (in CAD tbf).
 method: |
@@ -50,7 +48,6 @@ method: |
         <figcaption>Figure 4b</figcaption>
     </figure>
   </div>
-
 
 discussion: |
   This was a fun short term project.  I didn't end up making the dresser (for the best) but I learned a lot along the way.  For starters, setting up project variables to allow for modularity within the design was a necessity and a good practice for all future builds.  Further, the first version was quite slow to design.  It was easier for me to delete and redo a shape if I messed up than modify it.  I didn't understand dimensioning or what most of the tools did.  By the end of v3, I was using shortcuts and could navigate the platform much faster.  I still don't know what all the tools do, but I have much more familiarity with Onshape in general and its capabilities.  Another main learning from this project is using Assemblies.  Previously I've only ever made a single part for a project, but when designing the dresser, I had to make left and right drawers plus the base skeleton.  Piecing everything together made the rendering feel more legitimized and professional looking.  The cherry on top was learning how to use Mates and the Slider Mate Tool to give the drawers real functionality.  Having the drawers actually slide is when the entire project came together in my mind.  There are still some tolerence issues and minor tweaks I'd make if I was actually going to build this dresser, but I'm happy with how it turned out for the time being.  In the future I'd consider using real drawer sliders in place of the current wooden system, but I avoided them for this project to keep costs down.

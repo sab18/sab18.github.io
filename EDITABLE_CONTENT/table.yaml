@@ -50,8 +50,7 @@ method: |
     <figure class="auto-figure" id="fig5b">
       <img src="assets/images/table/Fig_5_b.jpg" alt="Single leg assembled">
         <figcaption>Figure 5b</figcaption>
-  </figure>
-
+    </figure>
   </div>
 
   While the legs were printing, I got to work on the tabletop.  I opted to use the router bit in Fig 6a becuase I thought it would leave a nice finish.  I ran it across the table's edges (plunging slightly more on the top side than the bottom).  The result was nicely rounded edges as shown in Fig 6b.  After routing, I sanded the entire tabletop.  I know you're supposed to go up in grit, but I feel like I was going off vibes here.  The surface was pretty smooth in the end, which is what I really care about.
@@ -64,13 +63,14 @@ method: |
     <figure class="auto-figure" id="fig6b">
       <img src="assets/images/table/Fig_6_b.jpg" alt="Routed edge">
         <figcaption>Figure 6b</figcaption>
-  </figure>
+    </figure>
+  </div>
   
   There was a moment during this project where I accidentally cut too deep into the wood (Fig 7).  I thought about just leaving it but ultimately decided against that since it was fairly noticeable (to me).  I just cut that section off and rerouted.
 
   <figure class="auto-figure" id="fig7">
-    <img src="assets/images/table/Fig_7.jpg" alt="Dresser single view">
-      <figcaption>Routing mishap</figcaption>
+    <img src="assets/images/table/Fig_7.jpg" alt="Routing mishap">
+      <figcaption>Figure 7</figcaption>
   </figure>
 
   When I queryued my mom about stains, she said I should do a blue stain to match our blue couch.  I swiftly said "Oh, Leslie" like in that one HIMYM episode with Katy Perry who plays Honey.  Instead, I suggested she use a natural stain of the brown variant.  I ended up going with "Traditional" because it is farily neutral.  I painted it on, wiped it off, and let it dry.  The last step is to screw the legs on.  Fortunately, I created a nice countersink in the leg prints to match the profile of the screw, so everything sits flush.  Fig 8 showcases the final product in my old stomping grounds (my old bedroom).  The table is 24" x 36" x 18" tall (ish).
@@ -80,7 +80,6 @@ method: |
       <figcaption>Figure 8</figcaption>
   </figure>
 
-  </div>
   
 discussion: |
   I quite like how this table turned out.  Specifically, I am happy with the routing - because a) it was a good new skill to get familiar with (I have routed before but never solo) and b) it made the table look way more polished.  I'm also glad I was able to learn about non-standard thread design in CAD.

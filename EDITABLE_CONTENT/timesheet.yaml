@@ -1,0 +1,44 @@
+title: Timesheet
+date: November 17, 2025
+abstract: |
+  Since living that 9-5 life, I have to track my hours for work.  I'd probably do this anyway, since I like collecting data like this in general.  I used to fill out an Excel sheet at the end of every day and at the end of every week submit them online.  This worked for a solid two years, but eventually I grew out of that system.  It was becoming clunky after it's original reliability.  Every year, I made improvements - you can observe the evolution from my very first version (Fig 1) to my most recent (Fig 2).<br>  Initially, there was a lot of manual work.  For each month I'd have to input the month/year (at least the actual days auto populated).  It was overall just pretty limited - tho I did make good use of the Time In/Time Out function.  Over time, I mainly used the Notes function and actual project tracking - the rest became irrelevant.  The new iterations relied more on semi-intense Formulas to automate as much as possible.  All the projects would auto populate as would the dates.  Even still, I wanted something that was easier to use, hense why I created my own timesheet software.
+
+  I actually had this idea nearly a year ago (late 2024) and nearly had it working by the new year.  That was my goal anyway.  Ofc it did not go to plan, and I got a solid 80% of the way there before stalling out.  Fast forward to September time frame, I was ready to take a second stab at it.
+
+  <div class="figure-row">
+    <figure class="auto-figure" id="fig1_a">
+      <img src="assets/images/timesheet/Fig_1_a.png" alt="Old timesheet version">
+        <figcaption>Figure 1a</figcaption>
+    </figure>
+    <figure class="auto-figure" id="fig1_b">
+      <img src="assets/images/timesheet/Fig_1_b.png" alt="New timesheet version">
+        <figcaption>Figure 1b</figcaption>
+    </figure>
+
+method: |
+  I used Python and Tkinter to create a GUI application that would allow me to input my hours worked each day and automatically generate the hours I need to input into my official timesheet.  This is important because I wanted the granularity of project-level tracking, but I only need to track cost center hours in reality.  The software is farily basic and at its core meant to streamline daily hour tracking, project code allocation, and a daily summary among other things.  I worked on the making sure all the back end stuff worked well, then leaned on gen ai for the front end side of things.
+  <br>
+
+  The heaby lifting packages are as follows:
+  - tkinter (obviously)
+  - pandas
+  - openpyxl
+
+
+
+
+discussion: |
+  Here are some of the main features:<br>
+
+  - Tabbed UI with Input Hrs and View Hrs page, as well as Monthly FTE, Yearly FTE, and a Config page.
+  - The Input Hrs page, as shown in Fig 2, allows for entering hours worked per project.  There are 3 sections here - one for "Main Projects" that I work on regurlarly, one for "Side Projects" that I work on on occasion, and a "Misc" section for ancillary projects/meetings/days off.  On the right half of Fig 2, there is a calendar where you can select the date.  There is also a place to enter Location (bc I want to know how many days I work in the office vs our sattilite locaiton).  Finally, this page hosts an entry box for recording what I did for the day.  This is useful becasue at the end of each month I write a summary of what I accomplished.  This is useful becuase at the end of each year we have reviews.
+  - The View Hrs page, as shown in Fig 3, allows for viewing previously entered hours on a weekly basis.  What is nice about this page, is that converts projects into cost centers automatically, so as I fill out my timesheet, I can copy over the hours exactly as shown.  There are some other nice features about this page, but I won't get too into the weeds here.
+  - As expected, the Monthly FTE and Yearly FTE display my monthly fte and yearly fte, respectively.  This is just a nice to have, to see how I'm spending my time.
+  - Lastly, on the config page, you can link 3 .yaml files (Locations, Projects, Timesheet Excel).  This allows any user to customize the locaitons and projects that appear in the software and also link projects to cost codes.  The Locations.yaml file is pretty straightforward, just a list of locations.  The project yaml file organizes projets into the 3 main buckets discussed earlier, listing projcet_nickname, project_name, cost_center_name, and cost_center_code for each project.
+
+  Other notes:
+  - The software supports dynamic reloading of pages when switching tabs, so any changes made to the hours inputted or in the config page are reflected immediately.  Getting this to work took way longer than I expected.
+
+  The code is structured with app.py being the main file containting class Timesheet(tk.Tk).
+
+  If you'd like to run the code, there is an initialize.py page as well (which takes values from inputs.py) and this'll set up the necessary .yaml files and an initial empty timesheet Excel file.  From there, you can run executable.py, which will download an .exe file to run the program.  It runs the executable every time (inideal).  Making it a proper installable program is on the to-do list, as is fixing some bugs with scrolling and displays in general.

@@ -11,7 +11,7 @@ general:
 [] ensure works on mobile
 [x] image opacity
 [x] rename project file
-
+[] add fav ico to every page.
 customize:
 [x] replace all pics (menu bar, logo, background pattern)
 [x] write 
