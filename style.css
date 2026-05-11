@@ -6,7 +6,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 /* Prefer the webfont 'EB Garamond' (Google Fonts). If not available, fall back to system Garamond, then serif. */
-body { font-family: 'EB Garamond', 'Garamond', 'Times New Roman', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
+body { font-family: 'EB Garamond', 'Garamond', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
 
 :root {
 	/* Uniform image height across the site (approx 25% smaller than previous 200px) */
