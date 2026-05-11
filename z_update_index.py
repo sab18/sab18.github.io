@@ -70,32 +70,36 @@ def update_index():
     spotlight_html = f'<section id="spotlight-projects">\n  <h1 class="section-title">Spotlight</h1>\n  <div class="projects-grid">\n    {cards}\n  </div>\n</section>'
 
     html = f'''<!DOCTYPE html>
-        <html lang="en">
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{title}</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="assets/images/favicon.ico">
-        </head>
-        <body>
-        <header>
-        <div class="header-content" style="flex-direction:column;align-items:center;gap:0;">
-        <div class="header-left" style="justify-content:center;width:100%;gap:12px;">
-            <div class="logo">
-            <img src="assets/images/logo_inverted.png" alt="Logo">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="assets/images/logo_inverted.png" alt="Logo">
+                </div>
+                <h1 class="site-name">sab18.github.io</h1>
             </div>
-        </header>
-        <main>
+            <nav class="menu-container" id="menu"></nav>
+        </div>
+    </header>
+    <main>
         <section class="homepage-body">
         {html_content}
         </section>
         {spotlight_html}
-        </main>
-        <script src="menu_data.js"></script>
-        <script src="menu.js"></script>
-        </body>
-        </html>'''
+    </main>
+    <script src="menu_data.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>'''
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html)
     print('Updated index.html from index.yaml')
