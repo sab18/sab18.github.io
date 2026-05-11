@@ -8,7 +8,9 @@ current:
 
 general:
 [x] consisten L/R margins (for about page)
+[x] consisten L/R margins (for about page)
 [x] logo for homepage
+[x] figure out best project page layout
 [x] figure out best project page layout
 [x] organize project chronogogically
 [x] pull date from yaml or list (don't have 2 sep locations)
@@ -21,7 +23,10 @@ general:
 customize:
 [x] replace all pics (menu bar, logo, background pattern)
 [x] write 
+[x] replace all pics (menu bar, logo, background pattern)
+[x] write 
 [] incl. cost in tent...
+[x] add in all image alts
 [x] add in all image alts
 
 
@@ -34,7 +39,15 @@ irl:
 [] 
 
 digital:
+irl:
+[] 
+
+digital:
 [] STSW
+[] Newsletter?
+[] this website?
+[] timesheet
+
 [] Newsletter?
 [] this website?
 [] timesheet

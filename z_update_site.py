@@ -1,6 +1,6 @@
 import os
 import yaml
-from projects_list import menu_list, irl_projects_list, digital_projects_list, spotlight_projects_list
+from z_projects_list import menu_list, irl_projects_list, digital_projects_list, spotlight_projects_list
 
 def make_label(filename):
     label = filename.replace('.html', '').replace('_', ' ')

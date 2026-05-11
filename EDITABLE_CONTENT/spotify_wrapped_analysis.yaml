@@ -1,7 +1,7 @@
 title: Spotify Wrapped Analysis
 date: January 18, 2025
 abstract: |
-  I like listening to music and found out that you can download your entire Spotify listening history.  At first, I just wanted to do this to see some of my stats, but in thinking about how to best visualize this data, I thought hosting via Webapp would be cool.  I first found you could download your Spotify data late 2022 and finally got around to making the website in early 2024 ish, so needless to say, this project has been a wip for many years.  It's had many iterations and also many roadblocks, but the first official/public release was Jan 18, 2025.
+  I like listening to music and found out that you can download your entire Spotify listening history.  At first, I just wanted to do this to see some of my stats, but in thinking about how to best visualize this data, I thought hosting via a webapp would be cool.  I first found you could download your Spotify data late 2022 and finally got around to making the website in early 2024 ish, so needless to say, this project has been a wip for many years.  It's had many iterations and also many roadblocks, but the first official/public release was Jan 18, 2025.
 
 method: |
   Going into this project, I didn't have any web development experience.  I had dabbled in Python and data analysis, but never made a full fledged webapp.  I used the Plotly Dash framework in Python to make the webapp because that's what ChatGPT told me to do.  ChatGPT was a dear friend throughout this process and I would not have gotten this far without her.
@@ -15,6 +15,19 @@ method: |
       <figcaption>Figure 1</figcaption>
   </figure>
 
+  If you don't want to read all of this (I mean who would), visiting the website may be more up your alley: <a href="https://saras-top-secret-website.onrender.com/">saras-top-secret-website.onrender.com</a>.  If you want your own Spotify Wrapped Analysis website, fill out the form on the <a href=https://saras-top-secret-website.onrender.com/sign-up>SIGN UP!</a> page.
+
+method: |
+  Going into this project, I didn't have any web development experience.  I had dabbled in Python and data analysis, but never made a full fledged webapp.  I used the Plotly Dash framework in Python to make the webapp because that's what ChatGPT told me to do.  ChatGPT was a dear friend throughout this process and I would not have gotten this far without her.  I think this was a good call in the end, becuase everything can be done in Python.
+
+  <u>v1 - Initial build:</u>
+  I spent the early days figuring out what I wanted the website to look like and what features to include.  I initially began brainstorming stats I wanted to have in the website and its general form.  I started v1 somewhere around Jan 2024.  It was pretty basic, but really cool to see my vision come to life (albeit just locally).  Just creating a really simple Dash App was super cool at the time and then starting to plug my own data into that felt even cooler.  Back then I didn't have anything saved on GitHub.  I remember I had spent a week straight working until 1am trying to get everything up and running and debugged.  I finally got it to a place I was happy with and my laptop malfunctioned, and I lost most of my progress.  That was a bummer, but a total wake up call that I really do need to use version control.  I was finally able to get back to a working state, not too far from where I left off, and pushed all my changes to GitHub.  Fig 1 is a screenshot of the Homepage when the website was in its infancy.
+  
+  <figure class="auto-figure" id="fig2">
+    <img src="assets/images/spotify_wrapped_analysis/Fig_2.jpg" alt="v1 Homepage screenshot">
+      <figcaption>Figure 2</figcaption>
+  </figure>
+
   As you can see, there are different tabs at the top.  Below is a list of the various pages:
   <div style="margin-left:0;">
     <p>- Homepage: a breif intro and some old rando pics of me.  (Easter egg, if you click on the images, it'll take you to some of my favorite Youtube music-related videos).
@@ -23,6 +36,8 @@ method: |
     <p>- In the Name of New Music: a random song generator to recommend songs pulled from my entire listening discography.</p>
     <p>- Fun Facts!: some fun stats about my listening habits including total minutes listened since creating my spotify acct, coutries I've listened to music in, top listened to songs, most back-toback plays, etc.</p>
     <p>- Under Construction: where the webapp is headed.</p>
+  </div>
+    Deploying was honestly one of the biggest challenges with this project.  Figuring out how to host it on some server so that it could be publicly accessible was quite the journey.  Initially I tried Heroku and PythonAnywhere, but I couldn't really figure out how to work either of them.  Eventually I found <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Charming Data</a> on Youtube, who recommended deploying via Render.  After dozens of rewatches and attempts to <a href=https://youtu.be/XWJBJoV5yww?si=YDYPmVfxVgoik-6v>this</a> video, I finally got it to work.  The worst part is the waiting period - making a change, deploying, sitting around for 5 minutes waiting to see if it'll work, only to have a new error pop up.  I think I finally got it to deploy a couple days before I went to Japan back in 2024.  It was a chaotic few days trying to scramble to get it done by my self induced dead line, but it all came together in the end.  I had to consolidate a lot of the code to be in the <code>app.py</code> file / root directory, but it was working nonetheless.  The src folder was critical to have for the way I deployed with dash-tools via dashtools gui.  Equally important was having the line <code>server = app.server</code> in the <code>app.py</code> file so that Render could find the server instance.  There are other important files needed for deployment too, namely <code>render.yaml</code> to tell Render how to deploy the app and ofc requirements.txt.
 
     Deploying was honestly one of the biggest challenges with this project.  Figuring out how to host it on some server so that it could be publicly accessible was quite the journey.  Initially I tried Heroku and PythonAnywhere, but neither did what I wanted.  Eventually I found [LINK] this YouTube video using Render.  After dozens of rewatches and attempts, I finally got it to work.  The worst part is the waiting period - making a change, deploying, sitting around for 5 minutes waiting to see if it'll work, only to have a new error pop up.  One of the main challenges I ran into early on had to do with setting up the environment on the server.  Even if certain packages weren't neccessary for your code to run, I found they were necessary for the dependencies [wheel, setuptools, etc.].  I think I finally got it to deploy a couple days before I went to Japan back in 2024.  It was a chaotic few days trying to scramble to get it done in time, but it all came together in the end.  I had to consolidated a lot of the code to be in the root directory/src/the app.py file, but it was working otherwise.  The src folder was critical to have for the way I deployed with dash-tools via dashtools gui.  Equally important was having the line server = app.server in the app.py file so that Render could find the server instance.  There are other important files needed for deployment too, namely render.yaml to tell Render how to deploy the app and ofc requirements.txt.
   
