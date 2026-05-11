@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+
 /* Ensure homepage body content aligns with other pages' top margin */
 .homepage-body {
 	margin-top: 14px;
 }
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'EB Garamond', 'Garamond', serif !important; }
 /* Prefer the webfont 'EB Garamond' (Google Fonts). If not available, fall back to system Garamond, then serif. */
+body, p, h1, h2, h3, h4, h5, h6, a, li, span, div { font-family: 'EB Garamond', 'Garamond', serif !important; }
 body { font-family: 'EB Garamond', 'Garamond', serif; background-color: #FAF7F0; color: #333; line-height: 1.6; position: relative; }
 
 :root {
